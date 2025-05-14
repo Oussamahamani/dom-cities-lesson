@@ -11,9 +11,38 @@ const cities = [
 
 let ul = document.querySelector("#cityList")
 
-console.log(ul)
+
 
 
 for(let city of cities){
-    console.log(city)
+
+    let cityName = city.name
+    let temp = city.temperature
+
+    // ul.textContent = ul.textContent + " "+  cityName
+    
+    // ul.innerHTML += `<li>${cityName}</li>`
+
+    let cityLi = document.createElement("li")
+    cityLi.innerText = cityName
+    cityLi.classList.add('city')
+
+    let tempLi = document.createElement("li")
+    tempLi.innerText = `temperature: `+ temp
+    tempLi.classList.add('temp')
+
+    // when the city is boston i want make the font bigger
+  
+    if(cityName == "Boston"){
+        cityLi.style.fontSize = "30px"
+    }
+
+
+    ul.appendChild(cityLi)
+    ul.appendChild(tempLi)
+    console.log(cityName)
 }
+
+
+document.querySelector(".title").innerText = "by"
+// console.log()
