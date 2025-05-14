@@ -69,7 +69,7 @@ for (let city of citiesElements){
     //city is boston
     // tempElement is its temperature
     if(temperature>30){
-        citycity.nextSibling.remove()
+        city.remove()
         tempElement.remove()
         continue
     }
@@ -87,7 +87,7 @@ for (let city of citiesElements){
 console.log(citiesElements)
 
 
-
+// dom properties
 // querySelector
 // querySelectorAll
 // createElement
@@ -98,6 +98,8 @@ console.log(citiesElements)
 //innerText
 //classList 
 
+
+// js stuff
 //split // return an array and you need to access specfic element in the array
 // Number
 //trim
