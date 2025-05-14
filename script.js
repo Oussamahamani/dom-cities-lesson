@@ -52,14 +52,53 @@ for (let temp of tempList){
     let celsuis = (fahrenheit-32)/(9/5)
     
 
-//   console.log(fahrenheit)
    temp.textContent = temp.textContent.replace(fahrenheit,celsuis.toFixed(1))
 
 }
-console.log(tempList)
+
+// part3: color cities based on their temp, if the temp is more than 20 city should be read otherwise blue, also if the city temp is too high remove it , 30
+
+
+let citiesElements = document.querySelectorAll(".city")
+
+for (let city of citiesElements){
+    let tempElement = city.nextSibling
+    let temperature = Number(tempElement.textContent.split(":")[1])
+    
+
+    //city is boston
+    // tempElement is its temperature
+    if(temperature>30){
+        citycity.nextSibling.remove()
+        tempElement.remove()
+        continue
+    }
+
+    if(temperature > 20){
+        city.style.color="red"
+    }else{
+        city.style.color="blue"
+    }
+
+    console.log(temperature)
+     
+
+}
+console.log(citiesElements)
 
 
 
+// querySelector
+// querySelectorAll
+// createElement
+// append
+// textContent
+//remove
+// nextSibling // the idea of relationships 
+//innerText
+//classList 
 
-
-
+//split // return an array and you need to access specfic element in the array
+// Number
+//trim
+//for of 
