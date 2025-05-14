@@ -13,7 +13,7 @@ let ul = document.querySelector("#cityList")
 
 
 
-
+// 
 for(let city of cities){
 
     let cityName = city.name
@@ -40,9 +40,26 @@ for(let city of cities){
 
     ul.appendChild(cityLi)
     ul.appendChild(tempLi)
-    console.log(cityName)
+    // console.log(cityName)
 }
 
+// part2: convert those temperatures to celsuis  
+let tempList = document.querySelectorAll(".temp")
 
-document.querySelector(".title").innerText = "by"
-// console.log()
+for (let temp of tempList){
+
+    let fahrenheit = Number(temp.textContent.split(":")[1].trim())
+    let celsuis = (fahrenheit-32)/(9/5)
+    
+
+//   console.log(fahrenheit)
+   temp.textContent = temp.textContent.replace(fahrenheit,celsuis.toFixed(1))
+
+}
+console.log(tempList)
+
+
+
+
+
+
